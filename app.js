@@ -41,7 +41,6 @@ console.log(bookList2)
 
 bookList2.addEventListener('click', (event)=>{
     console.log(event)
-
     let className = event.target.className
     if(className === "delete"){
         let li = event.target.parentElement
@@ -67,6 +66,31 @@ searchBook.addEventListener("keyup", function(event){
             parentNode.style.display = "none";
         }
     })
+})
+
+const addABook = document.forms["add-book"];
+console.log(addABook)
+addABook.addEventListener("submit", (event)=>{
+    event.preventDefault()
+    const inputValue = addABook.querySelector("input").value
+
+    if(inputValue.trim()) {
+        const liTag = document.createElement("li");
+        const spanTag1 = document.createElement("span");
+        const spanTag2 = document.createElement("span");
+
+        liTag.appendChild(spanTag1);
+        liTag.appendChild(spanTag2);
+
+        spanTag1.className = "name"
+        spanTag2.className = "delete"
+
+        spanTag1.textContent = inputValue;
+        spanTag2.textContent = "delete";
+
+        bookList2.prepend(liTag) //adds to first
+        //bookList2.appendChild(liTag) //adds to last
+    }
 })
 
 
