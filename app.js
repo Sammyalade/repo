@@ -90,6 +90,8 @@ addABook.addEventListener("submit", (event)=>{
 
         bookList2.prepend(liTag) //adds to first
         //bookList2.appendChild(liTag) //adds to last
+
+        addABook.reset();
     }
 })
 
