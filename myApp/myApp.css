@@ -1,0 +1,18 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.mainContainer{
+    width: 40vw;
+    margin: auto;
+    border: 1px solid black;
+}
+
+.inputContainer{
+    padding: 5px 20px;
+}
+
+.inputContainer > input{
+    width: 99%;
+}
